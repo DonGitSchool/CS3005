@@ -1,17 +1,20 @@
-# This is the compiler to use
+#Code Compiler
 CC = g++
 
-# These are the flags passed to the compiler
+#Compiler Flags
 CFLAGS = -c
 
+#What it will be compiling
 all: hello
 
-hello: hello.o
-	$(CC) hello.o -o hello
-
+# makes it compile (basically g++ -c hello.cpp)
 hello.o: hello.cpp
 	$(CC) $(CFLAGS) hello.cpp
 
+#Links File (g++ hello.o -o hello)
+hello: hello.o
+	$(CC) hello.o -o hello
+
+#cleans up everything 
 clean:
 	rm -rf *o hello
-
