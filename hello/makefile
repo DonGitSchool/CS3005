@@ -1,3 +1,5 @@
+#target_file: dependency1 dependency2
+
 #Code Compiler
 CC = g++
 
@@ -7,16 +9,18 @@ CFLAGS = -c
 #Set Targets
 TARGET = hello
 
-#What it will be compiling
-all: $(TARGET)
+#ADD -std=c++11 to any g++ command
 
-# makes it compile (ex: g++ -c hello.cpp)
-$(TARGET).o: $(TARGET).cpp
-	$(CC) $(CFLAGS) $(TARGET).cpp
+#What it will be compiling (ex: all: hello ascii_image)
+all: $(TARGET)
 
 #Links File (ex: g++ hello.o -o hello)
 $(TARGET): $(TARGET).o
-	$(CC) $(TARGET).o -o $(TARGET)
+	$(CC) -std=c++11 $(TARGET).o -o $(TARGET)
+
+# makes it compile (ex: g++ -c hello.cpp)
+$(TARGET).o: $(TARGET).cpp
+	$(CC) -std=c++11 $(CFLAGS) $(TARGET).cpp
 
 #cleans up everything 
 clean:
