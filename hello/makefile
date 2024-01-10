@@ -24,4 +24,4 @@ $(TARGET).o: $(TARGET).cpp
 
 #cleans up everything 
 clean:
-	rm -rf *o hello
+	rm -rf *o S(TARGET)
