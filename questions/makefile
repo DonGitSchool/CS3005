@@ -7,20 +7,20 @@ CC = g++
 CFLAGS = -c
 
 #Set Targets
-TARGET = hello
+TARGET2 = questions_3
 
 #ADD -std=c++11 to any g++ command
 
 #What it will be compiling (ex: all: hello ascii_image)
-all: $(TARGET)
+all: $(TARGET2)
 
 #Links File (ex: g++ hello.o -o hello)
-$(TARGET): $(TARGET).o
-	$(CC) -std=c++11 $(TARGET).o -o $(TARGET)
+$(TARGET2): $(TARGET2).o
+	$(CC) -std=c++11 $(TARGET2).o -o $(TARGET2)
 
 # makes it compile (ex: g++ -c hello.cpp)
-$(TARGET).o: $(TARGET).cpp
-	$(CC) -std=c++11 $(CFLAGS) $(TARGET).cpp
+$(TARGET2).o: $(TARGET2).cpp
+	$(CC) -std=c++11 $(CFLAGS) $(TARGET2).cpp
 
 #cleans up everything 
 clean:
